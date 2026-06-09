@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us — Xtreme Stall Build</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #F7F4EF;
+      --white: #FFFFFF;
+      --ink: #1A1A1A;
+      --charcoal: #2E2E2E;
+      --mid: #6B6B6B;
+      --light: #ADADAD;
+      --border: #E5E0D8;
+      --accent: #E31E24;
+      --accent-light: #F5DADA;
+      --accent-dark: #C41820;
+      --section-gap: 120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 0;
+      position: fixed; top: 0; width: 100%; z-index: 1000;
+      transition: box-shadow 0.3s;
+    }
+    .navbar.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.07); }
+    .navbar-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--ink) !important;
+      letter-spacing: -0.01em;
+      padding: 20px 0;
+    }
+    .navbar-brand span { color: var(--accent); }
+    .nav-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--charcoal) !important;
+      padding: 28px 16px !important;
+      position: relative;
+      transition: color 0.2s;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 20px; left: 16px; right: 16px;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+    }
+    .nav-link:hover { color: var(--accent) !important; }
+    .nav-link:hover::after { transform: scaleX(1); }
+    .btn-nav {
+      background: var(--ink);
+      color: #fff !important;
+      border-radius: 2px;
+      padding: 10px 24px !important;
+      font-size: 0.78rem !important;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-left: 8px;
+      transition: background 0.2s;
+    }
+    .btn-nav:hover { background: var(--accent) !important; }
+    .btn-nav::after { display: none !important; }
+
+    /* ── PAGE HERO ── */
+    #page-hero {
+      min-height: 60vh;
+      background: var(--cream);
+      display: flex; align-items: center;
+      padding-top: 100px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-bg-lines {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(90deg, var(--border) 1px, transparent 1px),
+        linear-gradient(180deg, var(--border) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 0.5;
+    }
+    .page-hero-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    .page-hero-desc {
+      font-size: 1.05rem;
+      color: var(--mid);
+      line-height: 1.75;
+      max-width: 520px;
+      font-weight: 300;
+    }
+
+    /* ── SECTIONS ── */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+    .section-label::before {
+      content: '';
+      display: block;
+      width: 28px; height: 1.5px;
+      background: var(--accent);
+    }
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .section-title em { font-style: italic; color: var(--accent); }
+    .section-desc {
+      font-size: 1rem;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+      max-width: 580px;
+    }
+
+    /* ── ABOUT CONTENT ── */
+    #about-intro { padding: var(--section-gap) 0; background: var(--white); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .about-content h2 { margin-bottom: 30px; }
+    .about-content p { margin-bottom: 20px; line-height: 1.8; }
+    .highlight-box {
+      background: var(--accent-light);
+      padding: 32px;
+      border-radius: 4px;
+      margin-top: 40px;
+      border-left: 4px solid var(--accent);
+    }
+    .highlight-box strong { color: var(--accent-dark); }
+
+    /* ── VALUES ── */
+    #values { padding: var(--section-gap) 0; background: var(--cream); }
+    .value-item {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      height: 100%;
+      transition: all 0.3s;
+    }
+    .value-item:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.08); }
+    .value-icon {
+      width: 56px;
+      height: 56px;
+      background: var(--accent-light);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+    .value-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .value-desc {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── TEAM ── */
+    #team { padding: var(--section-gap) 0; background: var(--white); }
+    .team-member {
+      text-align: center;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .member-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--cream);
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .member-image img { width: 100%; height: 100%; object-fit: cover; }
+    .member-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+    .member-role {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── EXPERTISE ── */
+    #expertise { padding: var(--section-gap) 0; background: var(--cream); }
+    .expertise-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 48px; margin-top: 60px; }
+    .expertise-item { text-align: center; }
+    .expertise-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .expertise-label {
+      font-size: 0.95rem;
+      color: var(--mid);
+      font-weight: 500;
+    }
+    .expertise-percentage {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 12px 0;
+    }
+
+    /* ── LOCATIONS ── */
+    #locations { padding: var(--section-gap) 0; background: var(--white); }
+    .locations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; margin-top: 60px; }
+    .location-card {
+      background: var(--cream);
+      padding: 32px;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .location-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .location-desc {
+      font-size: 0.95rem;
+      color: var(--mid);
+      line-height: 1.7;
+    }
+
+    /* ── CLIENTS CAROUSEL ── */
+    .clients-track-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .clients-track-wrap::before, .clients-track-wrap::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 80px;
+      z-index: 1;
+    }
+    .clients-track-wrap::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--white), transparent);
+    }
+    .clients-track-wrap::after {
+      right: 0;
+      background: linear-gradient(-90deg, var(--white), transparent);
+    }
+    .clients-track {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+      animation: scroll-clients 25s linear infinite;
+      width: max-content;
+    }
+    .clients-track:hover {
+      animation-play-state: paused;
+    }
+    .client-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--light);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      min-width: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 80px;
+    }
+    .client-logo:hover {
+      color: var(--ink);
+    }
+    @keyframes scroll-clients {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* ── CTA SECTION ── */
+    #cta {
+      padding: var(--section-gap) 0;
+      background: var(--ink);
+      color: #fff;
+      text-align: center;
+    }
+    .cta-title {
+      color: #fff;
+      margin-bottom: 20px;
+    }
+    .cta-desc {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      margin-bottom: 40px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 2px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.2s;
+    }
+    .btn-cta:hover { background: var(--accent-dark); gap: 12px; color: #fff; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(227,30,36,0.7); }
+      50% { box-shadow: 0 0 0 12px rgba(227,30,36,0); }
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+    .delay-2 { transition-delay: 0.2s; }
+    .delay-3 { transition-delay: 0.4s; }
+    .delay-4 { transition-delay: 0.6s; }
+    
+    .value-item:hover { animation: pulse-glow 2s infinite; }
+    
+    .location-card {
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .location-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 48px rgba(227,30,36,0.15);
+      border-color: var(--accent);
+    }
+    
+    .page-hero-bg-lines { animation: slideInLeft 0.8s ease; }
+    .page-hero-title { animation: fadeUp 0.8s ease; }
+    .page-hero-desc { animation: fadeUp 0.8s ease 0.1s both; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink);
+      color: rgba(255,255,255,0.6);
+      padding-top: 80px;
+    }
+    .footer-heading {
+      font-family: 'Playfair Display', serif;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.05em;
+    }
+    .footer-links { list-style: none; }
+    .footer-links li { margin-bottom: 12px; }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-bottom {
+      border-top: 1px solid rgba(200,137,58,0.2);
+      margin-top: 60px;
+      padding: 32px 0;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-bottom p { margin: 0; font-size: 0.85rem; }
+    .social-links { display: flex; gap: 16px; }
+    .social-link {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(200,137,58,0.3);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent);
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .social-link:hover {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    /* ── CAROUSEL ── */
+    .clients-carousel-container {
+      position: relative;
+      margin: 0 auto;
+      max-width: 100%;
+    }
+    
+    .carousel-track-wrapper {
+      overflow: hidden;
+      border-radius: 4px;
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateX(0);
+    }
+
+    .carousel-slide {
+      flex: 0 0 calc(25% - 15px);
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+    }
+
+    .client-logo-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      border-radius: 4px;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background: var(--white);
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .client-logo-box:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px rgba(227,30,36,0.12);
+      transform: translateY(-4px);
+      background: rgba(229,30,36,0.02);
+    }
+
+    .client-logo-box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 12px;
+      transition: transform 0.3s;
+    }
+
+    .client-logo-box:hover img {
+      transform: scale(1.08);
+    }
+
+    .client-logo-box p {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--mid);
+      margin: 0;
+      letter-spacing: 0.05em;
+    }
+
+    /* Navigation Buttons */
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: none;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+      z-index: 10;
+      box-shadow: 0 4px 12px rgba(227,30,36,0.25);
+    }
+
+    .carousel-nav:hover {
+      background: var(--accent-dark);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 6px 16px rgba(227,30,36,0.35);
+    }
+
+    .carousel-nav:active {
+      transform: translateY(-50%) scale(0.95);
+    }
+
+    .carousel-prev {
+      left: -60px;
+    }
+
+    .carousel-next {
+      right: -60px;
+    }
+
+    /* Pagination Dots */
+    .carousel-pagination {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      border: 2px solid var(--border);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .carousel-dot.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      width: 28px;
+      border-radius: 6px;
+    }
+
+    .carousel-dot:hover {
+      background: var(--accent-light);
+      border-color: var(--accent);
+    }
+
+    /* Responsive Carousel */
+    @media (max-width: 1200px) {
+      .carousel-slide { flex: 0 0 calc(33.333% - 15px); }
+      .carousel-prev { left: -50px; }
+      .carousel-next { right: -50px; }
+    }
+
+    @media (max-width: 768px) {
+      .carousel-slide { flex: 0 0 calc(50% - 15px); }
+      .carousel-nav {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+      }
+      .carousel-prev { left: -45px; }
+      .carousel-next { right: -45px; }
+      .carousel-track-wrapper { margin: 0 20px; }
+    }
+
+    @media (max-width: 480px) {
+      .carousel-slide { flex: 0 0 100%; }
+      .carousel-nav {
+        width: 40px;
+        height: 40px;
+        top: -50px;
+        transform: none !important;
+      }
+      .carousel-nav:hover {
+        transform: scale(1.1) !important;
+      }
+      .carousel-next {
+        left: auto;
+        right: 0;
+      }
+      .carousel-prev {
+        left: 0;
+        right: auto;
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .footer-bottom { flex-direction: column; gap: 24px; text-align: center; }
+      .social-links { justify-content: center; }
+      [style*="columns: 2;"] { columns: 1 !important; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Xtreme<span>Stall</span>Build</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <i class="bi bi-list fs-4"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="about-us.html">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Work</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#testimonials">Clients</a></li>
+        <li class="nav-item"><a class="nav-link btn-nav" href="index.html#contact">Get a Quote</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="page-hero-bg-lines"></div>
+  <div class="container position-relative">
+    <div class="fade-up">
+      <h1 class="page-hero-title">Our <em>Story</em> of Excellence</h1>
+      <p class="page-hero-desc">Since 2017, we've been transforming brand visions into extraordinary exhibition experiences across India. Meet the team that brings your ideas to life.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WELCOME INTRO -->
+<section id="welcome" style="padding: 80px 0; background: linear-gradient(135deg, var(--accent-light) 0%, rgba(242, 232, 217, 0.5) 100%);">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-12 fade-up">
+        <div style="text-align: center;">
+          <h2 class="section-title" style="margin-bottom: 20px;">Welcome to <em>Xtremestallbuild</em></h2>
+          <p style="font-size: 1.1rem; color: var(--mid); line-height: 1.8; max-width: 700px; margin-left: auto; margin-right: auto;">A premier stall design company established in 2017 by Mr. Yusuf Khan. Committed to excellence since our inception, we strive for superior quality and utmost customer satisfaction, solidifying our position as a market leader.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT INTRO -->
+<section id="about-intro">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content fade-up">
+        <div class="section-label">Who We Are</div>
+        <h2 class="section-title">Building Your <em>Exhibition Dreams</em> Into Reality</h2>
+        <p>Xtreme Stall Build aids brands by providing ready solutions that comprise Designing Temporary Display stands and Stalls through Events and Brand Activation. Working for more than 7 years we aim to develop the best designs for enchantment of exhibition and brand activation spaces.</p>
+        <p>Our team of experts can manage all these processes so that you don't get stressed when building and installing your booth. What differentiates our creative designs for the exhibition stalls from the rest, is our relentless commitment to making experiential marketing spaces such as Exhibitions, Trade shows, Events, Conferences, and Brand Activation, a success.</p>
+        <p style="font-size: 0.95rem; color: var(--accent); margin-top: 28px; margin-bottom: 16px;"><strong>Serving Across India:</strong></p>
+        <p style="font-size: 0.9rem; color: var(--mid); line-height: 1.9; margin-bottom: 20px;">Mumbai • Ahmedabad • Bengaluru • Hyderabad • Kolkata • Patna • Guwahati • Chandigarh • Ludhiana • Jammu • Uttrakhand • Lucknow • Chennai • Jaipur • Kochi</p>
+        <div class="highlight-box">
+          <strong>Why Choose Us:</strong> We don't just design stalls—we create stress-free, seamless experiences. Our team manages everything from concept to installation, ensuring your brand shines at every exhibition, trade show, conference, and event.
+        </div>
+      </div>
+      <div class="fade-up delay-2">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop" alt="Team collaboration" style="border-radius: 4px; width: 100%;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OUR TEAM & VISION -->
+<section id="team-vision" style="padding: var(--section-gap) 0; background: var(--cream);">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Our Foundation</div>
+      <h2 class="section-title">Our Team & <em>Vision</em></h2>
+    </div>
+    <div class="row g-5" style="margin-top: 60px;">
+      <div class="col-lg-6 fade-up delay-2">
+        <div style="background: var(--white); padding: 40px; border-radius: 4px; border-left: 4px solid var(--accent);">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-people"></i> Who We Are</h4>
+          <p style="color: var(--mid); line-height: 1.8; margin-bottom: 16px;">Xtreme Stall Build is a team of creative & passionate, resourceful & energetic professionals with lots of ideas and much-needed experience in organizing events and exhibitions. We are dedicated individuals who are the real pillars of our business.</p>
+          <p style="color: var(--mid); line-height: 1.8;">Our expertise spans creative designers, competent technicians, and skilled project managers who work in perfect harmony to deliver excellence across all project phases.</p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up delay-3">
+        <div style="background: var(--white); padding: 40px; border-radius: 4px; border-left: 4px solid var(--accent);">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-star"></i> Our Purpose</h4>
+          <p style="color: var(--mid); line-height: 1.8; margin-bottom: 16px;">The purpose of our operation is to empower every activity with unique branding, identity, and directions that are aimed at keeping the event's information and entertainment value high with true professionalism.</p>
+          <p style="color: var(--mid); line-height: 1.8;">We're committed to setting the trend of successful events, helping your organization create memorable experiences that build personality and self-esteem for your audience.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section id="values">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">What We Deliver</div>
+      <h2 class="section-title">Our Professional <em>Expertise</em></h2>
+      <p class="section-desc">We deliver customized solutions combining creative excellence with technical precision. From 3D stall design to complete fabrication, we manage every aspect to meet your unique needs perfectly.</p>
+    </div>
+    <div class="row g-4" style="margin-top: 60px;">
+      <div class="col-lg-3 fade-up delay-2">
+        <div class="value-item">
+          <div class="value-icon"><i class="bi bi-palette"></i></div>
+          <div class="value-title">3D Stall Design</div>
+          <div class="expertise-percentage">90%</div>
+          <div class="value-desc">Creative designs crafted to enchant and engage at every exhibition and brand activation space.</div>
+        </div>
+      </div>
+      <div class="col-lg-3 fade-up delay-3">
+        <div class="value-item">
+          <div class="value-icon"><i class="bi bi-box"></i></div>
+          <div class="value-title">Kiosk Design</div>
+          <div class="expertise-percentage">85%</div>
+          <div class="value-desc">Specialized kiosk solutions tailored for maximum brand impact and customer interaction.</div>
+        </div>
+      </div>
+      <div class="col-lg-3 fade-up delay-4">
+        <div class="value-item">
+          <div class="value-icon"><i class="bi bi-building"></i></div>
+          <div class="value-title">Workplace/Office Interior</div>
+          <div class="expertise-percentage">80%</div>
+          <div class="value-desc">Professional interior design solutions for corporate spaces and office environments.</div>
+        </div>
+      </div>
+      <div class="col-lg-3 fade-up" style="animation-delay: 0.8s;">
+        <div class="value-item">
+          <div class="value-icon"><i class="bi bi-hammer"></i></div>
+          <div class="value-title">Fabrication</div>
+          <div class="expertise-percentage">90%</div>
+          <div class="value-desc">Expert fabrication ensuring meticulous construction and flawless installation of all stall components.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE AREAS -->
+<section id="expertise-areas" style="padding: var(--section-gap) 0; background: var(--white);">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Specialized Services</div>
+      <h2 class="section-title">Our <em>Expertise</em> Areas</h2>
+      <p class="section-desc">We bring specialized expertise across multiple service dimensions, ensuring your project benefits from the right skill set and experience.</p>
+    </div>
+    <div class="row g-4" style="margin-top: 60px;">
+      <div class="col-lg-6 fade-up delay-2">
+        <div style="background: var(--cream); padding: 32px; border-radius: 4px;">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-pencil-square"></i> Creative Designers</h4>
+          <p style="color: var(--mid); line-height: 1.8; font-size: 0.95rem;">Our creative designers insinuate something new into every design, ensuring your exhibition stall stands out with fresh, innovative concepts that captivate your audience.</p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up delay-3">
+        <div style="background: var(--cream); padding: 32px; border-radius: 4px;">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-tools"></i> Technical Experts</h4>
+          <p style="color: var(--mid); line-height: 1.8; font-size: 0.95rem;">Our technical team guarantees pinpoint accuracy in execution, ensuring that every detail is precisely implemented according to design specifications.</p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up delay-4">
+        <div style="background: var(--cream); padding: 32px; border-radius: 4px;">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-diagram-3"></i> Project Managers</h4>
+          <p style="color: var(--mid); line-height: 1.8; font-size: 0.95rem;">Skilled project managers experienced in leading various projects guarantee maximum efficiency in coordination and timely delivery, ensuring stress-free execution.</p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up" style="animation-delay: 0.8s;">
+        <div style="background: var(--cream); padding: 32px; border-radius: 4px;">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-chat-dots"></i> Client Support</h4>
+          <p style="color: var(--mid); line-height: 1.8; font-size: 0.95rem;">We're committed to knowing and meeting every client's needs with prompt communication and complete satisfaction throughout all project phases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENT-CENTRIC APPROACH -->
+<section id="client-focus" style="padding: var(--section-gap) 0; background: linear-gradient(135deg, rgba(200,137,58,0.08) 0%, rgba(242,232,217,0.4) 100%);">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label" style="justify-content: center;">Our Commitment</div>
+      <h2 class="section-title" style="text-align: center; margin-bottom: 30px;">Meeting Your Needs <em>Perfectly</em></h2>
+    </div>
+    <div class="row g-4" style="margin-top: 60px;">
+      <div class="col-lg-6 fade-up delay-2">
+        <div style="background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-check-circle"></i> Streamlined Process</h4>
+          <p style="color: var(--mid); line-height: 1.8;">Xtreme Stall Build is here to cut some corners and provide you with the resources you need. We handle all the complexities of building and installing your booth, so you can focus on your core business. Let us take the stress out of your exhibition planning.</p>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up delay-3">
+        <div style="background: var(--white); padding: 40px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.06);">
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 1.15rem; margin-bottom: 16px; color: var(--ink);"><i class="bi bi-brightness-high"></i> Learning Experience</h4>
+          <p style="color: var(--mid); line-height: 1.8;">By organizing great exhibitions and events with us, you'll present a fantastic venue where attendees can enjoy their time and learn valuable skills. We're invested in helping your team and audience build their personality and self-esteem through memorable experiences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMIZED SOLUTIONS -->
+<section id="customized" style="padding: var(--section-gap) 0; background: var(--ink); color: #fff;">
+  <div class="container">
+    <div class="fade-up">
+      <h2 class="section-title" style="color: #fff; margin-bottom: 30px;">We Excel in Providing <em style="color: var(--accent);">Customized Solutions</em></h2>
+      <p style="color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.8; max-width: 700px; margin-bottom: 24px;">At Xtreme Stall Build, we are proud of our expertise in providing customized solutions aligned with your specific needs. We are always one step ahead of our competitors with great in-depth knowledge of the exhibition and event industry.</p>
+      <p style="color: rgba(255,255,255,0.8); font-size: 1rem; line-height: 1.8; max-width: 700px; margin-bottom: 24px;">We put your brand identity and objectives at the core of our projects to achieve the best impact. Starting from designing special procedures to precise implementation, we deliver solutions that not only meet but exceed expectations. With devotion to excellence and consistent attention to detail, we differentiate ourselves as your trusted ally in the field.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRESTIGIOUS CLIENTS -->
+<section id="clients" style="padding: 80px 0; background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+  <div class="container fade-up">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <div class="section-label" style="justify-content: center;">Partnership</div>
+      <h2 class="section-title">Our Prestigious <em>Clients</em></h2>
+      <p class="section-desc" style="margin-left: auto; margin-right: auto;">We've had the privilege of working with leading brands and organizations across various industries, from Fortune 500 companies to innovative startups.</p>
+    </div>
+    
+    <!-- Carousel Container -->
+    <div class="clients-carousel-container">
+      <!-- Carousel Wrapper -->
+      <div class="carousel-track-wrapper">
+        <div class="carousel-track" id="clientsCarousel">
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=Geron" alt="Geron" style="height: 60px; object-fit: contain;"/>
+              <p>Geron</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=IMMORTAL+Tyre" alt="IMMORTAL Tyre" style="height: 60px; object-fit: contain;"/>
+              <p>IMMORTAL Tyre</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=OMS+Group" alt="OMS Group" style="height: 60px; object-fit: contain;"/>
+              <p>OMS Group</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=Tata+Steel" alt="Tata Steel" style="height: 60px; object-fit: contain;"/>
+              <p>Tata Steel</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=Reliance" alt="Reliance" style="height: 60px; object-fit: contain;"/>
+              <p>Reliance</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=Pidilite" alt="Pidilite" style="height: 60px; object-fit: contain;"/>
+              <p>Pidilite</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=Asian+Paints" alt="Asian Paints" style="height: 60px; object-fit: contain;"/>
+              <p>Asian Paints</p>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="client-logo-box">
+              <img src="https://via.placeholder.com/180x80?text=Mahindra" alt="Mahindra" style="height: 60px; object-fit: contain;"/>
+              <p>Mahindra</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Controls -->
+      <button class="carousel-nav carousel-prev" id="clientsPrev" aria-label="Previous clients">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="carousel-nav carousel-next" id="clientsNext" aria-label="Next clients">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+
+    <!-- Pagination Dots -->
+    <div class="carousel-pagination" id="clientsPagination" style="margin-top: 40px;"></div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-label">Our Reach</div>
+      <h2 class="section-title">Serving Across <em>India</em></h2>
+      <p class="section-desc">With headquarters in Delhi NCR and support centers across major metropolitan areas, we're well-positioned to serve clients nationwide.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card fade-up delay-2">
+        <div class="location-title"><i class="bi bi-geo-alt-fill"></i> Head Office</div>
+        <div class="location-desc">Delhi NCR<br/>H.No.339 Village Majri<br/>Post Office Karala<br/>New Delhi - 110081</div>
+      </div>
+      <div class="location-card fade-up delay-3">
+        <div class="location-title"><i class="bi bi-hub"></i> Support Centers</div>
+        <div class="location-desc">• Mumbai<br/>• Kolkata<br/>• Bangalore<br/>• Ahmedabad<br/>• Hyderabad<br/>• Chennai<br/>• Patna</div>
+      </div>
+      <div class="location-card fade-up delay-4">
+        <div class="location-title"><i class="bi bi-phone"></i> Get in Touch</div>
+        <div class="location-desc">Phone: +91-9555595269<br/>Email: xtremestallbuild@gmail.com<br/><br/>Mon - Sat: 10:00 AM to 7:00 PM</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="fade-up">
+      <h2 class="cta-title">Ready to Bring Your Exhibition to Life?</h2>
+      <p class="cta-desc">Let's collaborate to create an exhibition experience that resonates with your audience and elevates your brand presence.</p>
+      <a href="index.html#contact" class="btn-cta">Get Your Free Quote <i class="bi bi-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="footer-heading">About Us</div>
+        <p style="font-size: 0.9rem; line-height: 1.7; margin-bottom: 20px;">Xtreme Stall Build is your premier partner for exhibition design, stall construction, and brand activation across India.</p>
+        <div class="social-links">
+          <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-heading">Services</div>
+        <ul class="footer-links">
+          <li><a href="#">3D Stall Design</a></li>
+          <li><a href="#">Kiosk Design</a></li>
+          <li><a href="#">Fabrication</a></li>
+          <li><a href="#">Office Interior</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <div class="footer-heading">Support Centers</div>
+        <ul class="footer-links" style="columns: 2;">
+          <li><a href="#">Mumbai</a></li>
+          <li><a href="#">Kolkata</a></li>
+          <li><a href="#">Bangalore</a></li>
+          <li><a href="#">Ahmedabad</a></li>
+          <li><a href="#">Hyderabad</a></li>
+          <li><a href="#">Chennai</a></li>
+          <li><a href="#">Patna</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Xtreme Stall Build. All rights reserved.</p>
+      <div class="social-links">
+        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Navbar scroll shadow
+  window.addEventListener('scroll', () => {
+    const navbar = document.getElementById('mainNav');
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // Enhanced fade-up on scroll with Intersection Observer
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Optional: stop observing after element is visible
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { 
+    threshold: 0.12,
+    rootMargin: '0px 0px -50px 0px'
+  });
+  
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Value item cards enhance on hover
+  document.querySelectorAll('.value-item').forEach(item => {
+    item.addEventListener('mouseenter', function() {
+      const icon = this.querySelector('.value-icon');
+      if (icon) {
+        icon.style.transform = 'rotate(360deg) scale(1.15)';
+        icon.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      }
+    });
+    item.addEventListener('mouseleave', function() {
+      const icon = this.querySelector('.value-icon');
+      if (icon) {
+        icon.style.transform = 'rotate(0) scale(1)';
+      }
+    });
+  });
+
+  // Location card hover animation
+  document.querySelectorAll('.location-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+      this.style.borderColor = 'var(--accent)';
+      this.style.boxShadow = '0 16px 48px rgba(227,30,36,0.15)';
+    });
+    card.addEventListener('mouseleave', function() {
+      this.style.borderColor = 'var(--border)';
+      this.style.boxShadow = '';
+    });
+  });
+
+  // Smooth active nav on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === 'about-us.html' || link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Add parallax effect on scroll (subtle)
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const heroBgLines = document.querySelector('.page-hero-bg-lines');
+    if (heroBgLines) {
+      heroBgLines.style.transform = `translateY(${scrolled * 0.5}px)`;
+    }
+  });
+
+  // Animate hero elements on page load
+  window.addEventListener('load', () => {
+    document.querySelector('.page-hero-title')?.classList.add('visible');
+    document.querySelector('.page-hero-desc')?.classList.add('visible');
+  });
+
+  // ── CLIENTS CAROUSEL FUNCTIONALITY ──
+  class ClientsCarousel {
+    constructor() {
+      this.carousel = document.getElementById('clientsCarousel');
+      this.prevBtn = document.getElementById('clientsPrev');
+      this.nextBtn = document.getElementById('clientsNext');
+      this.paginationContainer = document.getElementById('clientsPagination');
+      
+      if (!this.carousel) return;
+      
+      this.slides = Array.from(this.carousel.querySelectorAll('.carousel-slide'));
+      this.currentIndex = 0;
+      this.slidesToShow = this.getSlidesToShow();
+      this.totalSlides = this.slides.length;
+      this.totalPages = Math.ceil(this.totalSlides / this.slidesToShow);
+      
+      this.init();
+    }
+
+    init() {
+      this.createPagination();
+      this.attachEventListeners();
+      this.updateCarousel();
+      window.addEventListener('resize', () => this.handleResize());
+    }
+
+    getSlidesToShow() {
+      const width = window.innerWidth;
+      if (width >= 1200) return 4;
+      if (width >= 768) return 3;
+      if (width >= 480) return 2;
+      return 1;
+    }
+
+    handleResize() {
+      const newSlidesToShow = this.getSlidesToShow();
+      if (newSlidesToShow !== this.slidesToShow) {
+        this.slidesToShow = newSlidesToShow;
+        this.totalPages = Math.ceil(this.totalSlides / this.slidesToShow);
+        this.currentIndex = Math.min(this.currentIndex, this.totalPages - 1);
+        this.updatePagination();
+        this.updateCarousel();
+      }
+    }
+
+    createPagination() {
+      this.paginationContainer.innerHTML = '';
+      for (let i = 0; i < this.totalPages; i++) {
+        const dot = document.createElement('div');
+        dot.className = `carousel-dot ${i === 0 ? 'active' : ''}`;
+        dot.addEventListener('click', () => this.goToPage(i));
+        this.paginationContainer.appendChild(dot);
+      }
+    }
+
+    attachEventListeners() {
+      this.prevBtn?.addEventListener('click', () => this.prev());
+      this.nextBtn?.addEventListener('click', () => this.next());
+    }
+
+    prev() {
+      this.currentIndex = (this.currentIndex - 1 + this.totalPages) % this.totalPages;
+      this.updateCarousel();
+    }
+
+    next() {
+      this.currentIndex = (this.currentIndex + 1) % this.totalPages;
+      this.updateCarousel();
+    }
+
+    goToPage(pageIndex) {
+      this.currentIndex = pageIndex;
+      this.updateCarousel();
+    }
+
+    updateCarousel() {
+      const translateValue = -this.currentIndex * (100 / this.slidesToShow) * this.slidesToShow;
+      this.carousel.style.transform = `translateX(${translateValue}%)`;
+      this.updatePagination();
+    }
+
+    updatePagination() {
+      const dots = this.paginationContainer.querySelectorAll('.carousel-dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === this.currentIndex);
+      });
+    }
+  }
+
+  // Initialize carousel
+  new ClientsCarousel();
+</script>
+
+</body>
+</html>
