@@ -187,20 +187,116 @@
             <div class="logo-track d-flex align-items-center">
 
             <!-- ORIGINAL -->
-            <div class="logo-item">GUPTA<br><small>AROMATICS</small></div>
-            <div class="logo-item">DUBEX<br><small>PRO INDUSTRIES</small></div>
-            <div class="logo-item">OmS</div>
-            <div class="logo-item">SHRI RAM<br><small>INDUSTRIES</small></div>
-            <div class="logo-item text-danger">GERON</div>
-            <div class="logo-item text-danger">LABFLEX</div>
+            <div class="logo-item">
+              <img src="images/clients/01.png" alt="Client Logo 1" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/02.png" alt="Client Logo 2" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/03.png" alt="Client Logo 3" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/04.png" alt="Client Logo 4" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/05.png" alt="Client Logo 5" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/06.png" alt="Client Logo 6" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/07.png" alt="Client Logo 7" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/08.png" alt="Client Logo 8" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/09.png" alt="Client Logo 9" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/10.png" alt="Client Logo 10" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/11.png" alt="Client Logo 11" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/12.png" alt="Client Logo 12" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/13.png" alt="Client Logo 13" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/14.png" alt="Client Logo 14" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/15.png" alt="Client Logo 15" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/16.png" alt="Client Logo 16" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/17.png" alt="Client Logo 17" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/18.png" alt="Client Logo 18" />
+            </div>
 
             <!-- DUPLICATE (important) -->
-            <div class="logo-item">GUPTA<br><small>AROMATICS</small></div>
-            <div class="logo-item">DUBEX<br><small>PRO INDUSTRIES</small></div>
-            <div class="logo-item">OmS</div>
-            <div class="logo-item">SHRI RAM<br><small>INDUSTRIES</small></div>
-            <div class="logo-item text-danger">GERON</div>
-            <div class="logo-item text-danger">LABFLEX</div>
+            <div class="logo-item">
+              <img src="images/clients/01.png" alt="Client Logo 1" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/02.png" alt="Client Logo 2" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/03.png" alt="Client Logo 3" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/04.png" alt="Client Logo 4" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/05.png" alt="Client Logo 5" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/06.png" alt="Client Logo 6" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/07.png" alt="Client Logo 7" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/08.png" alt="Client Logo 8" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/09.png" alt="Client Logo 9" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/10.png" alt="Client Logo 10" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/11.png" alt="Client Logo 11" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/12.png" alt="Client Logo 12" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/13.png" alt="Client Logo 13" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/14.png" alt="Client Logo 14" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/15.png" alt="Client Logo 15" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/16.png" alt="Client Logo 16" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/17.png" alt="Client Logo 17" />
+            </div>
+            <div class="logo-item">
+              <img src="images/clients/18.png" alt="Client Logo 18" />
+            </div>
 
             </div>
         </div>

@@ -24,13 +24,13 @@ function numberToWords($number) {
   </div> 
    <div class="container" style="position: relative; z-index: 5; text-align: center; color: #fff;">
     <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; font-family: 'Oswald', sans-serif; animation: slideInUp 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
-      OUR <em style="color: #FFD700; font-style: italic;">PROCESS</em>
+      OUR <em style="color: #e02020; font-style: italic;">PROCESS</em>
     </h1>
-    <p style="font-size: 1.2rem; margin-bottom: 30px; animation: fadeInUp 1.1s ease-out 0.3s both;">
+    <p style="font-size: 1.5rem; margin-bottom: 30px; animation: fadeInUp 1.1s ease-out 0.3s both;">
       Building Your Exhibition Dreams Into Reality
     </p>
     <div style="animation: bounce 2s infinite 0.6s; cursor: pointer;">
-      <!-- <i class="fas fa-chevron-down" style="font-size: 2rem; color: #FFD700;"></i> -->
+      <!-- <i class="fas fa-chevron-down" style="font-size: 2rem; color: #e02020;"></i> -->
     </div>
   </div>
 </section>
@@ -156,41 +156,41 @@ function numberToWords($number) {
   <div class="container">
     <div style="text-align: center; margin-bottom: 60px;">
       <h2 style="font-size: 2.8rem; font-weight: 700; color: #fff; margin-bottom: 20px; font-family: 'Oswald', sans-serif;">
-        Why Choose <em style="color: #FFD700;">Xtreme Stall Build</em>
+        Why Choose <em style="color: #e02020;">Xtreme Stall Build</em>
       </h2>
       <p style="font-size: 1rem; color: #ccc; max-width: 700px; margin: 0 auto; line-height: 1.6;">
         <?php echo date("Y") - 2017; ?>+ years of excellence in exhibition stall design and fabrication.
       </p>
     </div>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #FFD700; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.2s both;">
-        <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Expert Team</h4>
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #e02020; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.2s both;">
+        <h4 style="color: #e02020; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Expert Team</h4>
         <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">Experienced designers, engineers, and technicians dedicated to perfection.</p>
       </div>
 
-      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #FFD700; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.4s both;">
-        <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Quality Assurance</h4>
+      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #e02020; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.4s both;">
+        <h4 style="color: #e02020; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Quality Assurance</h4>
         <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">Rigorous quality checks at every stage of production and installation.</p>
       </div>
 
-      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #FFD700; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.6s both;">
-        <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Timely Delivery</h4>
+      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #e02020; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.6s both;">
+        <h4 style="color: #e02020; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Timely Delivery</h4>
         <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">We respect your deadlines and deliver on schedule, every time.</p>
       </div>
 
-      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #FFD700; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.8s both;">
-        <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Innovation</h4>
+      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #e02020; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 0.8s both;">
+        <h4 style="color: #e02020; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Innovation</h4>
         <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">Latest design trends and fabrication technologies for modern solutions.</p>
       </div>
 
-      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #FFD700; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 1s both;">
-        <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Full Support</h4>
+      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #e02020; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 1s both;">
+        <h4 style="color: #e02020; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Full Support</h4>
         <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">End-to-end support from concept to post-exhibition dismantling.</p>
       </div>
 
-      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #FFD700; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 1.2s both;">
-        <h4 style="color: #FFD700; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Cost-Effective</h4>
+      <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 8px; border-left: 4px solid #e02020; backdrop-filter: blur(10px); animation: fadeInUp 0.8s ease-out 1.2s both;">
+        <h4 style="color: #e02020; font-weight: 700; margin-bottom: 15px; font-size: 1.2rem;">Cost-Effective</h4>
         <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">Competitive pricing without compromising on quality or creativity.</p>
       </div>
     </div>

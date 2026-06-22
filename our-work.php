@@ -1,22 +1,22 @@
 <?php include 'header.php'; ?>
 
 <!-- PAGE HERO -->
-<section id="page-hero" style="background: linear-gradient(135deg, rgba(26,26,26,0.85) 0%, rgba(224,32,32,0.75) 100%), url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80') center/cover; min-height: 70vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+<section id="page-hero" style="background:url('images/our_work.jpeg') center/cover; min-height: 70vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
   <div class="page-hero-bg-lines" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: 
     repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,0.03) 50px, rgba(255,255,255,0.03) 51px),
     repeating-linear-gradient(90deg, transparent, transparent 50px, rgba(255,255,255,0.03) 50px, rgba(255,255,255,0.03) 51px);
     pointer-events: none;">
   </div>
-  <div class="container" style="position: relative; z-index: 5; text-align: center; color: #fff;">
+  <!-- <div class="container" style="position: relative; z-index: 5; text-align: center; color: #fff;">
     <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; font-family: 'Oswald', sans-serif; animation: slideInUp 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
-      OUR <em style="color: #FFD700; font-style: italic;">WORK</em>
+      OUR <em style="color: #e02020; font-style: italic;">WORK</em>
     </h1>
-    <p style="font-size: 1.2rem; margin-bottom: 30px; animation: fadeInUp 1.1s ease-out 0.3s both;">
+    <p style="font-size: 1.5rem; margin-bottom: 30px; animation: fadeInUp 1.1s ease-out 0.3s both;">
       Building Your Exhibition Dreams Into Reality
     </p>
     <div style="animation: bounce 2s infinite 0.6s; cursor: pointer;">
-      <i class="fas fa-chevron-down" style="font-size: 2rem; color: #FFD700;"></i>
-    </div>
+      <i class="fas fa-chevron-down" style="font-size: 2rem; color: #e02020;"></i>
+    </div> -->
   </div>
 </section>
 
@@ -195,7 +195,7 @@
   .gallery-overlay-icon {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #FFD700;
+    color: #e02020;
   }
 
   .gallery-overlay-title {
@@ -260,7 +260,7 @@
   }
 
   .lightbox-close:hover {
-    color: #FFD700;
+    color: #e02020;
   }
 
   .lightbox-nav-btn {

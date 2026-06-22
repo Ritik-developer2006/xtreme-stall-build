@@ -9,13 +9,13 @@
   </div>
   <!-- <div class="container" style="position: relative; z-index: 5; text-align: center; color: #fff;">
     <h1 style="font-size: 3.5rem; font-weight: 700; margin-bottom: 20px; font-family: 'Oswald', sans-serif; animation: slideInUp 0.9s cubic-bezier(0.68, -0.55, 0.265, 1.55);">
-      GET IN <em style="color: #FFD700; font-style: italic;">TOUCH</em>
+      GET IN <em style="color: #e02020; font-style: italic;">TOUCH</em>
     </h1>
     <p style="font-size: 1.2rem; margin-bottom: 30px; animation: fadeInUp 1.1s ease-out 0.3s both;">
       We'd love to hear from you. Let's start a conversation.
     </p>
     <div style="animation: bounce 2s infinite 0.6s; cursor: pointer;">
-      <i class="fas fa-chevron-down" style="font-size: 2rem; color: #FFD700;"></i>
+      <i class="fas fa-chevron-down" style="font-size: 2rem; color: #e02020;"></i>
     </div> -->
   </div>
 </section>
@@ -245,7 +245,7 @@
     background: rgba(255,255,255,0.08);
     padding: 40px;
     border-radius: 8px;
-    border-left: 4px solid #FFD700;
+    border-left: 4px solid #e02020;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     animation: fadeInUp 0.8s ease-out;
@@ -263,7 +263,7 @@
   .office-card h3 {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #FFD700;
+    color: #e02020;
     margin-bottom: 20px;
     font-family: 'Oswald', sans-serif;
   }
@@ -284,7 +284,7 @@
   .support-centers h3 {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #FFD700;
+    color: #e02020;
     margin-bottom: 25px;
     font-family: 'Oswald', sans-serif;
   }
@@ -309,7 +309,7 @@
     content: '→';
     position: absolute;
     left: 0;
-    color: #FFD700;
+    color: #e02020;
     font-weight: bold;
   }
 
@@ -446,7 +446,7 @@
 <section class="offices-section">
   <div class="container">
     <div class="offices-title">
-      <h2>Office & <em style="color: #FFD700;">Branches</em></h2>
+      <h2>Office & <em style="color: #e02020;">Branches</em></h2>
       <p>Visit us at any of our locations across India</p>
     </div>
 
@@ -457,7 +457,7 @@
         <p>H.No.339 Village Majri</p>
         <p>Post office Karala Near Old Chopal</p>
         <p>New Delhi – 110081</p>
-        <p style="margin-top: 15px; color: #FFD700; font-weight: 600;">+91 9555595269</p>
+        <p style="margin-top: 15px; color: #e02020; font-weight: 600;">+91 9555595269</p>
       </div>
 
       <!-- Mumbai Branch -->
@@ -466,7 +466,7 @@
         <p>Survey No – 96 Hissa No- 3</p>
         <p>Ms Market Goteghar</p>
         <p>Kalyan Phata – 400612</p>
-        <p style="margin-top: 15px; color: #FFD700; font-weight: 600;">+91 9555595269</p>
+        <p style="margin-top: 15px; color: #e02020; font-weight: 600;">+91 9555595269</p>
       </div>
     </div>
 
