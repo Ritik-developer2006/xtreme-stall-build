@@ -139,31 +139,31 @@
     <h2 class="section-title">OUR WORK</h2>
     <div class="work-grid reveal">
       <div class="work-item">
-        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700&q=80" alt="Exhibition Stall 1" loading="lazy"/>
+        <img src="images/gallery/01.png" alt="Exhibition Stall 1" loading="lazy"/>
       </div>
       <div class="work-item">
-        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=400&q=80" alt="Exhibition Stall 2" loading="lazy"/>
+        <img src="images/gallery/02.png" alt="Exhibition Stall 2" loading="lazy"/>
       </div>
       <div class="work-item">
-        <img src="https://images.unsplash.com/photo-1519567770579-c2fc5de7ce83?w=400&q=80" alt="Exhibition Stall 3" loading="lazy"/>
+        <img src="images/gallery/03.jpg" alt="Exhibition Stall 3" loading="lazy"/>
       </div>
       <div class="work-item">
-        <img src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=400&q=80" alt="Stall Design 4" loading="lazy"/>
+        <img src="images/gallery/04.jpeg" alt="Stall Design 4" loading="lazy"/>
       </div>
       <div class="work-item">
-        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=700&q=80" alt="Stall Design 5" loading="lazy"/>
+        <img src="images/gallery/05.png" alt="Stall Design 5" loading="lazy"/>
       </div>
       <div class="work-item">
-        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&q=80" alt="Stall Design 6" loading="lazy"/>
+        <img src="images/gallery/06.jpeg" alt="Stall Design 6" loading="lazy"/>
       </div>
-      <div class="work-item">
+      <!-- <div class="work-item">
         <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&q=80" alt="Stall Design 7" loading="lazy"/>
       </div>
       <div class="work-item">
         <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80" alt="Stall Design 8" loading="lazy"/>
-      </div>
+      </div> -->
     </div>
-    <a href="portfolio.php" class="btn-view-all">VIEW ALL →</a>
+    <a href="our-work.php" class="btn-view-all">VIEW ALL →</a>
   </section>
 
   <!-- CLIENTS -->

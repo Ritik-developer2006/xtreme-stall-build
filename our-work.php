@@ -103,32 +103,6 @@
     font-weight: 600;
   }
 
-  .gallery-filter {
-    text-align: center;
-    margin-bottom: 50px;
-  }
-
-  .filter-btn {
-    background: #fff;
-    border: 2px solid #ddd;
-    padding: 10px 25px;
-    margin: 0 8px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
-
-  .filter-btn:hover,
-  .filter-btn.active {
-    background: #e02020;
-    color: #fff;
-    border-color: #e02020;
-  }
-
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -168,41 +142,7 @@
     transform: scale(1.12);
   }
 
-  .gallery-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(224,32,32,0.9) 0%, rgba(26,26,26,0.95) 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 0.4s ease;
-    z-index: 10;
-  }
 
-  .gallery-item:hover .gallery-overlay {
-    opacity: 1;
-  }
-
-  .gallery-overlay-content {
-    text-align: center;
-    color: #fff;
-  }
-
-  .gallery-overlay-icon {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-    color: #e02020;
-  }
-
-  .gallery-overlay-title {
-    font-size: 1.2rem;
-    font-weight: 700;
-    font-family: 'Oswald', sans-serif;
-  }
 
   /* LIGHTBOX MODAL */
   .lightbox-modal {
@@ -374,11 +314,6 @@
       font-size: 1.6rem;
     }
 
-    .filter-btn {
-      padding: 8px 15px;
-      margin: 5px 4px;
-      font-size: 0.8rem;
-    }
 
     .gallery-overlay-icon {
       font-size: 1.5rem;
@@ -438,113 +373,96 @@
       <p>Explore our recent exhibition stall designs</p>
     </div>
 
-    <!-- Filter Buttons -->
-    <div class="gallery-filter fade-up delay-1">
-      <button class="filter-btn active" onclick="filterGallery('all')">All Work</button>
-      <button class="filter-btn" onclick="filterGallery('exhibition')">Exhibition</button>
-      <button class="filter-btn" onclick="filterGallery('workshop')">Workshop</button>
-      <button class="filter-btn" onclick="filterGallery('events')">Events</button>
-    </div>
-
     <!-- Gallery Grid -->
     <div class="gallery-grid">
       <!-- Item 1 -->
-      <div class="gallery-item fade-up delay-1" data-category="exhibition" onclick="openLightbox(0)">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&auto=format&fit=crop&q=80" alt="Modern Exhibition Stall Design" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Modern Exhibition Design</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up delay-1" onclick="openLightbox(0)">
+        <img src="images/gallery/01.png" alt="Gallery Image 01" loading="lazy">
       </div>
 
       <!-- Item 2 -->
-      <div class="gallery-item fade-up delay-2" data-category="exhibition" onclick="openLightbox(1)">
-        <img src="https://images.unsplash.com/photo-1552999081-75d75c98868c?w=600&auto=format&fit=crop&q=80" alt="Creative Stall Setup" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Creative Stall Setup</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up delay-2" onclick="openLightbox(1)">
+        <img src="images/gallery/02.png" alt="Gallery Image 02" loading="lazy">
       </div>
 
       <!-- Item 3 -->
-      <div class="gallery-item fade-up delay-3" data-category="workshop" onclick="openLightbox(2)">
-        <img src="https://images.unsplash.com/photo-1552664730-1d73ca13cbf0?w=600&auto=format&fit=crop&q=80" alt="Workshop Fabrication" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Workshop Fabrication</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up delay-3" onclick="openLightbox(2)">
+        <img src="images/gallery/03.jpg" alt="Gallery Image 03" loading="lazy">
       </div>
 
       <!-- Item 4 -->
-      <div class="gallery-item fade-up delay-4" data-category="events" onclick="openLightbox(3)">
-        <img src="https://images.unsplash.com/photo-1552664797-e95f7f2a3007?w=600&auto=format&fit=crop&q=80" alt="Event Exhibition Space" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Event Exhibition Space</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up delay-4" onclick="openLightbox(3)">
+        <img src="images/gallery/04.jpeg" alt="Gallery Image 04" loading="lazy">
       </div>
 
       <!-- Item 5 -->
-      <div class="gallery-item fade-up" style="animation-delay: 0.5s;" data-category="exhibition" onclick="openLightbox(4)">
-        <img src="https://images.unsplash.com/photo-1552664797-85f4b93e2ba1?w=600&auto=format&fit=crop&q=80" alt="Professional Display Setup" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Professional Display Setup</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up" style="animation-delay: 0.5s;" onclick="openLightbox(4)">
+        <img src="images/gallery/05.png" alt="Gallery Image 05" loading="lazy">
       </div>
 
       <!-- Item 6 -->
-      <div class="gallery-item fade-up" style="animation-delay: 0.6s;" data-category="workshop" onclick="openLightbox(5)">
-        <img src="https://images.unsplash.com/photo-1552664806-b06f4b6f90f8?w=600&auto=format&fit=crop&q=80" alt="Construction Process" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Construction Process</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up" style="animation-delay: 0.6s;" onclick="openLightbox(5)">
+        <img src="images/gallery/06.jpeg" alt="Gallery Image 06" loading="lazy">
       </div>
 
       <!-- Item 7 -->
-      <div class="gallery-item fade-up" style="animation-delay: 0.7s;" data-category="events" onclick="openLightbox(6)">
-        <img src="https://images.unsplash.com/photo-1552674605-5defe6aa44bb?w=600&auto=format&fit=crop&q=80" alt="Brand Exhibition Showcase" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Brand Exhibition</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up" style="animation-delay: 0.7s;" onclick="openLightbox(6)">
+        <img src="images/gallery/07.png" alt="Gallery Image 07" loading="lazy">
       </div>
 
       <!-- Item 8 -->
-      <div class="gallery-item fade-up" style="animation-delay: 0.8s;" data-category="exhibition" onclick="openLightbox(7)">
-        <img src="https://images.unsplash.com/photo-1552674605-5defe6aa44ba?w=600&auto=format&fit=crop&q=80" alt="Interactive Stall Design" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Interactive Design</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up" style="animation-delay: 0.8s;" onclick="openLightbox(7)">
+        <img src="images/gallery/08.jpeg" alt="Gallery Image 08" loading="lazy">
       </div>
 
       <!-- Item 9 -->
-      <div class="gallery-item fade-up" style="animation-delay: 0.9s;" data-category="workshop" onclick="openLightbox(8)">
-        <img src="https://images.unsplash.com/photo-1552674605-5defe6aa44bc?w=600&auto=format&fit=crop&q=80" alt="Final Installation" loading="lazy">
-        <div class="gallery-overlay">
-          <div class="gallery-overlay-content">
-            <div class="gallery-overlay-icon"><i class="fas fa-image"></i></div>
-            <div class="gallery-overlay-title">Final Installation</div>
-          </div>
-        </div>
+      <div class="gallery-item fade-up" style="animation-delay: 0.9s;" onclick="openLightbox(8)">
+        <img src="images/gallery/09.png" alt="Gallery Image 09" loading="lazy">
+      </div>
+
+      <!-- Item 10 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.0s;" onclick="openLightbox(9)">
+        <img src="images/gallery/10.jpg" alt="Gallery Image 10" loading="lazy">
+      </div>
+
+      <!-- Item 11 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.1s;" onclick="openLightbox(10)">
+        <img src="images/gallery/11.jpg" alt="Gallery Image 11" loading="lazy">
+      </div>
+
+      <!-- Item 12 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.2s;" onclick="openLightbox(11)">
+        <img src="images/gallery/12.jpg" alt="Gallery Image 12" loading="lazy">
+      </div>
+
+      <!-- Item 13 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.3s;" onclick="openLightbox(12)">
+        <img src="images/gallery/13.png" alt="Gallery Image 13" loading="lazy">
+      </div>
+
+      <!-- Item 14 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.4s;" onclick="openLightbox(13)">
+        <img src="images/gallery/14.jpeg" alt="Gallery Image 14" loading="lazy">
+      </div>
+
+      <!-- Item 15 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.5s;" onclick="openLightbox(14)">
+        <img src="images/gallery/15.jpeg" alt="Gallery Image 15" loading="lazy">
+      </div>
+
+      <!-- Item 16 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.6s;" onclick="openLightbox(15)">
+        <img src="images/gallery/16.jpg" alt="Gallery Image 16" loading="lazy">
+      </div>
+
+      <!-- Item 17 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.7s;" onclick="openLightbox(16)">
+        <img src="images/gallery/17.jpg" alt="Gallery Image 17" loading="lazy">
+      </div>
+
+      <!-- Item 18 -->
+      <div class="gallery-item fade-up" style="animation-delay: 1.8s;" onclick="openLightbox(17)">
+        <img src="images/gallery/18.png" alt="Gallery Image 18" loading="lazy">
       </div>
     </div>
   </div>
@@ -585,15 +503,24 @@
 
 <script>
   const galleryImages = [
-    { src: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&auto=format&fit=crop&q=80', title: 'Modern Exhibition Design' },
-    { src: 'https://images.unsplash.com/photo-1552999081-75d75c98868c?w=1200&auto=format&fit=crop&q=80', title: 'Creative Stall Setup' },
-    { src: 'https://images.unsplash.com/photo-1552664730-1d73ca13cbf0?w=1200&auto=format&fit=crop&q=80', title: 'Workshop Fabrication' },
-    { src: 'https://images.unsplash.com/photo-1552664797-e95f7f2a3007?w=1200&auto=format&fit=crop&q=80', title: 'Event Exhibition Space' },
-    { src: 'https://images.unsplash.com/photo-1552664797-85f4b93e2ba1?w=1200&auto=format&fit=crop&q=80', title: 'Professional Display Setup' },
-    { src: 'https://images.unsplash.com/photo-1552664806-b06f4b6f90f8?w=1200&auto=format&fit=crop&q=80', title: 'Construction Process' },
-    { src: 'https://images.unsplash.com/photo-1552674605-5defe6aa44bb?w=1200&auto=format&fit=crop&q=80', title: 'Brand Exhibition' },
-    { src: 'https://images.unsplash.com/photo-1552674605-5defe6aa44ba?w=1200&auto=format&fit=crop&q=80', title: 'Interactive Design' },
-    { src: 'https://images.unsplash.com/photo-1552674605-5defe6aa44bc?w=1200&auto=format&fit=crop&q=80', title: 'Final Installation' }
+    { src: 'images/gallery/01.png', title: 'Gallery 01' },
+    { src: 'images/gallery/02.png', title: 'Gallery 02' },
+    { src: 'images/gallery/03.png', title: 'Gallery 03' },
+    { src: 'images/gallery/04.png', title: 'Gallery 04' },
+    { src: 'images/gallery/05.png', title: 'Gallery 05' },
+    { src: 'images/gallery/06.png', title: 'Gallery 06' },
+    { src: 'images/gallery/07.png', title: 'Gallery 07' },
+    { src: 'images/gallery/08.png', title: 'Gallery 08' },
+    { src: 'images/gallery/09.png', title: 'Gallery 09' },
+    { src: 'images/gallery/10.png', title: 'Gallery 10' },
+    { src: 'images/gallery/11.png', title: 'Gallery 11' },
+    { src: 'images/gallery/12.png', title: 'Gallery 12' },
+    { src: 'images/gallery/13.png', title: 'Gallery 13' },
+    { src: 'images/gallery/14.png', title: 'Gallery 14' },
+    { src: 'images/gallery/15.png', title: 'Gallery 15' },
+    { src: 'images/gallery/16.png', title: 'Gallery 16' },
+    { src: 'images/gallery/17.png', title: 'Gallery 17' },
+    { src: 'images/gallery/18.png', title: 'Gallery 18' }
   ];
 
   let currentImageIndex = 0;
@@ -647,26 +574,6 @@
       if (e.key === 'Escape') closeLightbox();
     }
   });
-
-  // Gallery filter
-  function filterGallery(category) {
-    const items = document.querySelectorAll('.gallery-item');
-    const buttons = document.querySelectorAll('.filter-btn');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
-
-    items.forEach(item => {
-      if (category === 'all' || item.dataset.category === category) {
-        item.style.display = 'block';
-        setTimeout(() => {
-          item.style.opacity = '1';
-        }, 10);
-      } else {
-        item.style.display = 'none';
-      }
-    });
-  }
 
   // Fade-up animation on scroll
   const fadeElements = document.querySelectorAll('.fade-up');

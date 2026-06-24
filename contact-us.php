@@ -409,7 +409,7 @@
         <p>Fill out the form below and we'll get back to you as soon as possible.</p>
       </div>
 
-      <form method="POST" action="#" style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s both;">
+      <form id="contactForm" method="POST" action="send-inquiry.php" style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s both;">
         <div class="form-row">
           <div class="form-group">
             <label for="fname">First Name <span class="required">*</span></label>
@@ -532,29 +532,67 @@
     }
   });
 
-  // Form validation
-  const form = document.querySelector('form');
+  // Form submission via AJAX
+  const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function(e) {
       e.preventDefault();
+      
       const fname = document.getElementById('fname').value.trim();
       const lname = document.getElementById('lname').value.trim();
       const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
 
+      // Simple client-side validation
       if (!fname || !lname || !email) {
         alert('Please fill in all required fields.');
         return;
       }
 
-      // Simple email validation
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailPattern.test(email)) {
         alert('Please enter a valid email address.');
         return;
       }
 
-      alert('Thank you for your inquiry! We will contact you soon.');
-      form.reset();
+      // Prepare form data
+      const formData = new FormData();
+      formData.append('fname', fname);
+      formData.append('lname', lname);
+      formData.append('email', email);
+      formData.append('phone', phone);
+      formData.append('message', message);
+
+      // Show loading state on button
+      const submitBtn = form.querySelector('.submit-btn');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      // Send form data via AJAX
+      fetch('send-inquiry.php', {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => response.json())
+      .then(data => {
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+
+        if (data.success) {
+          alert(data.message);
+          form.reset();
+        } else {
+          alert(data.message);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+        alert('An error occurred. Please try again later.');
+      });
     });
   }
 </script>
