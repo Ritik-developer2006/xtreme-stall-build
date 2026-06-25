@@ -50,7 +50,7 @@
 </div>
 
 <!-- SECTION 4 -->
-<div class="service-section reverse alt">
+<!-- <div class="service-section reverse alt">
   <div class="content">
     <h2>Benefits of Our Office Interior Design</h2>
     
@@ -67,7 +67,7 @@
   <div class="image">
     <img src="images\SERVICESS\Workplace/J4.jpg" alt="Workspace Benefits">
   </div>
-</div>
+</div> -->
 
 <!-- CTA SECTION -->
 <div class="cta-section">

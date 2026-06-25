@@ -5,7 +5,7 @@
 
 
 <!-- PAGE HERO -->
-<section id="page-hero">
+<section id="page-hero" class="about-hero">
   <div class="page-hero-bg-lines"></div>
   <div class="container position-relative h-100">
     <div class="page-hero-content">

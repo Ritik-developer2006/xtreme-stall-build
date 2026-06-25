@@ -1,0 +1,26 @@
+/* Page-specific hero alignment for about-us.php only */
+#page-hero.about-hero {
+  justify-content: flex-start;
+}
+#page-hero.about-hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#page-hero.about-hero .page-hero-content {
+  max-width: 640px;
+  /* padding-left: 40px; */
+}
+@media (max-width: 768px) {
+  #page-hero.about-hero {
+    justify-content: center;
+    padding: 60px 0;
+  }
+  #page-hero.about-hero .container {
+    justify-content: center;
+  }
+  #page-hero.about-hero .page-hero-content {
+    padding-left: 0;
+    width: 100%;
+  }
+}
